@@ -1,0 +1,328 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: rgb(55, 168, 32);
+  --black-color: hsl(0, 0%, 18%);
+  --black-color-light: hsl(0, 0%, 30%);
+  --title-color: hsl(0, 0%, 95%);
+  --white-color: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 70%);
+  --text-color-light: hsl(0, 0%, 64%);
+  --body-color: hsl(0, 0%, 8%);
+  --container-color: hsl(0, 0%, 12%);
+  --delete-color: hsl(6, 78%, 57%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-bold: 700;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  :root {
+    --biggest-font-size: 1.5rem;
+    --h1-font-size: 1.2rem;
+    --h2-font-size: 1.1rem;
+    --small-font-size: 0.713rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color 0.4s;
+}
+
+h1,
+h2 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.section {
+  padding-block: 4rem 2rem;
+}
+
+.section__title {
+  position: relative;
+  font-size: var(--h1-font-size);
+  width: max-content;
+  margin: 0.75rem auto 2rem;
+  margin-bottom: 5rem;
+  z-index: 20;
+}
+
+.section__title span {
+  z-index: 5;
+  position: relative;
+}
+
+.section__title::after {
+  content: "";
+  width: 40px;
+  height: 30px;
+  bottom: -4px;
+  background-color: var(--first-color);
+  position: absolute;
+  right: -20px;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+/*=============== BUTTON ===============*/
+.button {
+  background-color: var(--black-color);
+  padding: 1.1rem 1.5rem;
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+  transition: background-color 0.4s;
+}
+
+.button:hover {
+  background-color: var(--first-color);
+}
+
+/*=============== REGISTER ===============*/
+.register {
+  padding-bottom: 0;
+}
+
+.register__container {
+  position: relative;
+  grid-template-rows: 300px max-content max-content;
+  row-gap: 0;
+}
+
+.register__mail {
+  position: relative;
+  background-color: var(--black-color);
+  padding: 5rem 1.5rem 2.5rem;
+  margin-top: -2.5rem;
+  border-radius: 15px;
+  transition: background-color 0.4s;
+}
+
+.register__title {
+  color: var(--white-color);
+  font-size: var(--h2-font-size);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.register__form,
+.register__group {
+  display: grid;
+  row-gap: 1.25rem;
+}
+
+.register__form {
+  position: relative;
+}
+
+.register__box {
+  position: relative;
+  width: 100%;
+  height: 58px;
+}
+
+.register__input,
+.register__button {
+  font-family: var(--body-font);
+  outline: none;
+  border: none;
+}
+
+.register__input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-color);
+  border: 3px solid var(--black-color-light);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  font-weight: var(--font-medium);
+  transition: border 0.4s, background-color 0.4s;
+}
+
+.register__input::placeholder {
+  color: var(--text-color-light);
+  transition: opacity 0.4s;
+}
+
+.register__input:focus {
+  border: 3px solid var(--white-color);
+}
+
+.register__input:-webkit-autofill {
+  transition: background-color 6000s, color 6000s;
+}
+
+.register__input select option {
+  font-size: 1px;
+}
+
+.register__label {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  background-color: var(--black-color);
+  padding: 8px;
+  pointer-events: none;
+  transition: top 0.4s, opacity 0.4s, background-color 0.4s;
+  opacity: 0;
+}
+
+.register__button {
+  background-color: var(--first-color);
+  cursor: pointer;
+}
+
+.register__button:hover {
+  background-color: var(--black-color-light);
+}
+
+.register__message {
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: -1.6rem;
+  left: 0;
+}
+
+/* Opaque placeholder */
+.register__input:focus::placeholder {
+  opacity: 0;
+}
+
+/* Move label up & sticky label */
+.register__input:focus + .register__label,
+.register__input:not(:placeholder-shown) + .register__label {
+  opacity: 1;
+  top: -20px;
+}
+
+/*=============== PRODUCT LIST ===============*/
+.product__item {
+  display: grid;
+  row-gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--black-color);
+  border: 1px solid var(--black-color-light);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  color: var(--white-color);
+}
+
+.product__item span {
+  font-weight: var(--font-medium);
+}
+
+.delete__button {
+  background-color: var(--delete-color);
+  color: var(--white-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete__button i {
+  font-size: 1.2rem;
+}
+
+.delete__button:hover {
+  background-color: #c0392b;
+}
+
+.hidden {
+  display: none;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 65%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 29%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 45%);
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--black-color);
+  display: inline-flex;
+  padding: 8px;
+  font-size: 1.25rem;
+  color: var(--white-color);
+  z-index: var(--z-tooltip);
+  transition: bottom 0.4s, transform 0.4s, background-color 0.4s;
+}
+
+.scrollup:hover {
+  transform: translateY(-0.5rem);
+}

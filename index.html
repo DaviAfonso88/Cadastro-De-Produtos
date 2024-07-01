@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--===============CSS===============-->
+    <link href='css/styles.css' rel='stylesheet'>
+
+    <!--===============MEDIA===============-->
+    <link href='css/media.css' rel='stylesheet'>
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css">
+
+
+    <title>Cadastro De Produtos</title>
+
+    <!--=============== TAGS ===============-->
+    <meta property="og:title" content="Cadastro De Produtos">
+    <meta property="og:description" content="Cadastre seus produtos agora e facilite sua gestão!">
+</head>
+
+<body>
+    <main class="main">
+        <!--==================== REGISTER ====================-->
+        <section class="register section" id="register">
+
+            <h2 class="section__title">
+                <span>Cadastro</span>
+            </h2>
+
+            <div class="register__container container">
+                <div class="register__mail">
+                    <h2 class="register__title">Cadastre Seu Produto</h2>
+
+                    <form action="" class="register__form" id="register-form">
+                        <div class="register__group">
+                            <div class="register__box">
+                                <input type="text" name="product_name" class="register__input" id="name" required
+                                    placeholder="Nome do produto">
+                                <label for="name" class="register__label">Nome do produto</label>
+                            </div>
+
+                            <div class="register__box">
+                                <input type="text" name="product_description" class="register__input" id="description"
+                                    required placeholder="Descrição do produto">
+                                <label for="email" class="register__label">Descrição do produto
+                                </label>
+                            </div>
+
+                            <div class="register__box">
+                                <input type="number" name="product_value" class="register__input" id="value" required
+                                    placeholder="Valor do produto">
+                                <label for="subject" class="register__label">Valor do produto
+                                </label>
+                            </div>
+
+                            <div class="register__box register__select">
+                                <select name="product_available" class="register__input" id="available" required>
+                                    <option value="" selected disabled>Selecione</option>
+                                    <option value="sim">Sim</option>
+                                    <option value="não">Não</option>
+                                </select>
+                                <label for="subject" class="register__label">Disponível para venda
+                            </div>
+
+                            <button type="submit" class="register__button button">
+                                <i class="ri-send-plane-line"></i> Cadastrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PRODUCT LIST ====================-->
+        <section class="register section hidden" id="product-list-container">
+
+            <h2 class="section__title">
+                <span>Listagem</span>
+            </h2>
+
+            <div class="container">
+                <button id="new-product-button" class="register__button button">
+                    <i class="ri-add-circle-line"></i> Novo Produto
+                </button>
+                <div id="product-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <!--=============== JS ===============-->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
