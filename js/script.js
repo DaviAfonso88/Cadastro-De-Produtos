@@ -60,6 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const valueSpan = document.createElement("span");
       valueSpan.textContent = `Valor: R$ ${product.value.toFixed(2)}`;
 
+      const descriptionSpan = document.createElement("span");
+      descriptionSpan.textContent = `Descrição: ${product.description}`;
+
       const deleteButton = document.createElement("button");
       deleteButton.classList.add("delete__button");
       deleteButton.innerHTML = '<i class="ri-delete-bin-line"></i>';
@@ -68,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       productItem.appendChild(nameSpan);
+      productItem.appendChild(descriptionSpan);
       productItem.appendChild(valueSpan);
       productItem.appendChild(deleteButton);
       productList.appendChild(productItem);
